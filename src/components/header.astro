@@ -1,0 +1,29 @@
+---
+import type { NavItem } from "../types/types";
+
+const navItems: Array<NavItem> = [
+  {title: "Inicio", url: "#start"},
+  {title: "Skills", url: "#skills"},
+  {title: "Proyectos", url: "#projects"},
+  {title: "Contacto", url: "#contact"},
+]
+---
+
+<header id="page-header" class="sticky top-0 z-50 w-full   items-center justify-end px-3 py-4 text-gray-950">
+
+  <nav>
+    <ul class="flex items-center gap-4 justify-end w-full ml-auto max-w-xs sm:max-w-none">
+      {
+        navItems.map(({title, url}) => (
+          <li>
+            <a href={url}>
+              {title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+
+</header>
