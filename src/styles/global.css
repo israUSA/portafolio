@@ -1,2 +1,34 @@
 @import "tailwindcss";
 
+[data-theme="light"] {
+  /* Blanco y Negro con acento Dorado Elegante */
+  --color-primary: #D4AF37;           /* Dorado Champán */
+  --color-secondary: #1A1A1A;         /* Negro suave para elementos secundarios */
+  --color-text: #F8FAFC;              /* Blanco humo */
+  --color-text-offset: #525252;       /* Gris oscuro para subtítulos */
+  --color-background: #FFFFFF;        /* Blanco puro */
+  --color-background-section-from: #F9F9F9;
+  --color-background-section-to: #F2F2F2;
+  --color-background-offset: #E5E5E5;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-button: #080808;            /* Botón negro elegante */
+}
+
+[data-theme="dark"] {
+  /* Tema Oscuro Profundo con acento Ciano Eléctrico */
+  --color-primary: #00D1FF;           /* Ciano eléctrico para resaltar */
+  --color-secondary: #94A3B8;         /* Slate para detalles */
+  --color-text: #F8FAFC;              /* Blanco humo */
+  --color-text-offset: #94A3B8;       /* Gris azulado */
+  --color-background: #020617;        /* Azul noche muy oscuro (más elegante que el negro sólido) */
+  --color-background-section-from: #0F172A;
+  --color-background-section-to: #020617;
+  --color-background-offset: #1E293B;
+  --color-border: rgba(255, 255, 255, 0.05);
+  --color-button: #F8FAFC;            /* Botón blanco en tema oscuro */
+}
+
+.button{
+  background-color: var(--color-button);
+  color: var(--color-text);
+}
