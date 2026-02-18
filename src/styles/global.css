@@ -33,6 +33,11 @@
   color: var(--color-text);
 }
 
+.buttonPrimary{
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
 .footer{
   background-color: var(--color-secondary);
   color:  var(--color-text);
