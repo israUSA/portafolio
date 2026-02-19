@@ -1,17 +1,17 @@
 ---
-const { icon } = Astro.props;
+import { Image } from "astro:assets";
+
+const { srcImage } = Astro.props;
 const { name } = Astro.props;
 
 ---
 
+<div class="flex items-center gap-4 p-4 rounded-lg shadow-m my-4 mx-2 bg-amber-50">
+  <Image
+  src={srcImage}
+  alt=`skill ${name}`
+  class="h-4 w-4"/>
 
-<div class="flex items-center gap-4 p-4 rounded-lg shadow-m">
-  <!-- Icono -->
-  <div class="text-4xl">
-    <i class={icon}></i>
-  </div>
-
-  <!-- Nombre de la habilidad -->
   <div class="flex-1">
     <h3 class="text-xl font-bold">{name}</h3>
   </div>

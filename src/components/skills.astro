@@ -1,26 +1,24 @@
 ---
-import SkillInformation from './skill-information.astro';
+import SkillInformation from "./skill-information.astro";
+
+import flutterImage from "../assets/flutter.png";
+import firebaseImage from "../assets/firebase.png";
+import angularImage from "../assets/angular.jpg";
+import astroImage from "../assets/astro.png";
+import tailwindImage from "../assets/tailwind.png";
 ---
-<section id="skills" class="flex flex-row">
 
-  <SkillInformation 
-  icon="fa-brands fa-flutter"
-  name="Flutter"/>
-
-  <SkillInformation 
-  icon="fa-solid fa-fire"
-  name="Firebase"/>
-
-  <SkillInformation 
-  icon="fab fa-angular"
-  name="Angular"/>
-
-  <SkillInformation 
-  icon="fa-solid fa-a"
-  name="Astro"/>
-
-  <SkillInformation 
-  icon="fa-brands fa-tailwind-css"
-  name="Tailwind"/>
+<section id="skills" class="px-8 py-4 bg-amber-200">
+  <div>
+    <h2 class="text-xl font-bold">Skills Técnicos</h2>
+    <h3 class="font-semibold">Tecnologías que uso para dar vida a las ideas</h3>
+    <div class="flex flex-row flex-wrap">
+      <SkillInformation srcImage={flutterImage} name="Flutter"/>
+      <SkillInformation srcImage={firebaseImage} name="Firebase"/>
+      <SkillInformation srcImage={angularImage} name="Angular"/>
+      <SkillInformation srcImage={astroImage} name="Astro"/>
+      <SkillInformation srcImage={tailwindImage} name="Tailwind"/>
+    </div>
+  </div>
 
 </section>
