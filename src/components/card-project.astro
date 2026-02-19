@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+
+
+const {srcImage} = Astro.props;
+const {title} = Astro.props;
+const {technology} = Astro.props;
+const {description} = Astro.props;
+---
+
+
+
+<div>
+
+  <Image
+  src={srcImage}
+  alt=`Imagen proyecto ${title}`
+  />
+
+  <div class="px-4">
+    <h1>
+      {title}
+    </h1>
+    <h2>
+      {technology}
+    </h2>
+    <p>
+      {description}
+    </p>
+  </div>
+
+</div>
