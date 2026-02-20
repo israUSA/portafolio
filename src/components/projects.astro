@@ -1,5 +1,9 @@
 ---
-import cardProject from  "./card-project.astro";
+import CardProject from  "./card-project.astro";
+
+import servientregaImage from "../assets/screenshots/servientrega-project.png"
+import teojamaImage from "../assets/screenshots/teojama-project.png"
+import promariscoImage from "../assets/screenshots/promarisco-project.png"
 
 ---
 
@@ -9,7 +13,31 @@ import cardProject from  "./card-project.astro";
     <h3>Una seleccion de aplicaciones desarrolladas por mí</h3>
   </div>
 
-  <div class="flex flex-row" >
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-4 items-stretchr" >
+
+    <CardProject
+    srcImage={servientregaImage}
+    bgColor="bg-green-100"
+    title="Servientrega Courrier",
+    technology="Flutter"
+    description="ajdjksajdjdkjdajsadasdkajdkjsadd aisdsad  aijdsadsa  saidssakjassa kajdksajlkdsalkdsda kasjdkjsadsadsadkjnsadkjnsakdnsakjdnkjdnsandsankjdnakjdadnakjnsk"
+    />
+
+    <CardProject
+    srcImage={teojamaImage}
+    bgColor="bg-indigo-100"
+    title="Teojama",
+    technology="Flutter"
+    description="ajdjksajdjdkjdajsadasdkajdkjsadd aisdsad  aijdsadsa  saidssakjassa ladsajdkjsalkdad"
+    />
+
+    <CardProject
+    srcImage={promariscoImage}
+    bgColor="bg-red-100"
+    title="Promarisco",
+    technology="Flutter"
+    description="ajdjksajdjdkjdajsadasdkajdkjsadd aisdsad  aijdsadsa  saidssakjassa jajsdksajoidjaoidoia"
+    />
 
 
   </div>

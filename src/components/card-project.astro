@@ -2,29 +2,25 @@
 import { Image } from "astro:assets";
 
 
-const {srcImage} = Astro.props;
-const {title} = Astro.props;
-const {technology} = Astro.props;
-const {description} = Astro.props;
+const {srcImage, bgColor, title, technology, description} = Astro.props;
 ---
+<div class="flex flex-col h-full overflow-hidden rounded-xl border border-gray-200">
+  <div class={`${bgColor} w-full flex justify-center items-center py-4 rounded-t-xl`}>
+    <Image
+    src={srcImage}
+    alt=`Imagen proyecto ${title}`
+    class="h-100 w-50"
+    />
+  </div>
 
-
-
-<div>
-
-  <Image
-  src={srcImage}
-  alt=`Imagen proyecto ${title}`
-  />
-
-  <div class="px-4">
-    <h1>
+  <div class="px-4 py-4 bg-gray-100 grow">
+    <h1 class="text-xl font-semibold">
       {title}
     </h1>
     <h2>
       {technology}
     </h2>
-    <p>
+    <p class="text-start text-sm text-gray-700 wrap-break-word">
       {description}
     </p>
   </div>
