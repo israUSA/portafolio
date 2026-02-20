@@ -3,9 +3,17 @@ import SkillInformation from "./skill-information.astro";
 
 import flutterImage from "../assets/flutter.png";
 import firebaseImage from "../assets/firebase.png";
+import googlePlayConsoleImage from "../assets/google-play-console.png";
+import googleCloudConsoleImage from "../assets/google-cloud-console.png";
 import angularImage from "../assets/angular.jpg";
 import astroImage from "../assets/astro.png";
 import tailwindImage from "../assets/tailwind.png";
+
+import netImage from "../assets/net.png";
+import sqlServerImage from "../assets/sqlserver.png";
+
+
+
 ---
 
 <section id="skills" class="px-8 py-4 bg-amber-200">
@@ -15,9 +23,20 @@ import tailwindImage from "../assets/tailwind.png";
     <div class="flex flex-row flex-wrap">
       <SkillInformation srcImage={flutterImage} name="Flutter"/>
       <SkillInformation srcImage={firebaseImage} name="Firebase"/>
+      <SkillInformation srcImage={googlePlayConsoleImage} name="Google Play Console"/>
+      <SkillInformation srcImage={googleCloudConsoleImage} name="Google Cloud Console"/>
       <SkillInformation srcImage={angularImage} name="Angular"/>
       <SkillInformation srcImage={astroImage} name="Astro"/>
       <SkillInformation srcImage={tailwindImage} name="Tailwind"/>
+    </div>
+  </div>
+  
+  <div class="my-6">
+    <h2 class="text-xl font-bold">Próximamente en mi Stack</h2>
+    <h3 class="font-semibold">Nuevas rutas para transformar conceptos en realidad.</h3>
+    <div class="flex flex-row flex-wrap">
+      <SkillInformation srcImage={netImage} name=".NET"/>
+      <SkillInformation srcImage={sqlServerImage} name=".SQL Server"/>
     </div>
   </div>
 
