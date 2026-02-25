@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+// IMPORTA tus imágenes aquí (igual que en la landing)
+import img1 from "../assets/screenshots/servientrega-project.png"; 
+import img2 from "../assets/screenshots/teojama-project.png";
+
+const id = Astro.url.searchParams.get('id') ?? ''; 
+const title = Astro.url.searchParams.get('title') ?? 'Proyecto';
+
+// Mapa de imágenes (asociamos el ID con la imagen importada)
+const imagenes: Record<string, any> = {
+  "nombre-de-tu-proyecto-1": img1,
+  "nombre-de-tu-proyecto-2": img2,
+};
+
+// 2. Ahora ya te deja usar el id sin errores
+const imagenSeleccionada = imagenes[id] || img1;
+---
+
+<Layout>
+   <main transition:animate="slide" class="min-h-screen bg-gray-50 p-10">
+    <a href="/" class="text-blue-500 hover:underline">← Volver</a>
+
+    <div class="max-w-4xl mx-auto mt-10 text-center">
+      <!-- Ahora usamos el objeto de imagen real de Astro -->
+      <img 
+        src={imagenSeleccionada.src} 
+        transition:name={`hero-${id}`} 
+        class="w-full h-96 object-contain bg-white rounded-3xl shadow-lg" 
+      />
+      
+      <h1 class="text-4xl font-bold mt-8">{title}</h1>
+    </div>
+  </main>
+</Layout>
