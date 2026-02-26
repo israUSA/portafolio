@@ -1,40 +1,44 @@
 ---
 import { Image } from "astro:assets";
-const { srcImage, bgColor, title, technology, description } = Astro.props;
-const projectID = title.toLowerCase().replace(/\s+/g, '-');
+
+import type {ProjectInformation} from "../types/types";
+
+
+interface Props {
+  project: ProjectInformation;
+}
+
+const { project } = Astro.props;
+
+
+const projectID = project.projectName.toLowerCase().replace(/\s+/g, '-');
 
 ---
 <div class="group flex flex-col h-full overflow-hidden rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300 shadow-md">
   
-  <div class={`${bgColor} relative w-full flex justify-center items-center py-4 rounded-t-xl overflow-hidden`}>
+  <div class={`${project.bgColor} relative w-full flex justify-center items-center py-4 rounded-t-xl overflow-hidden`}>
     
     <Image
-      src={srcImage}
-      alt={`Imagen proyecto ${title}`}
+      src={(project.screenshots?.[0] ?? "") as any} 
+      alt={`Imagen proyecto ${project.projectName}`}
       transition:name={`hero-${projectID}`} 
       class="h-80 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
     />
 
     <div class="absolute inset-0 bg-black/40 backdrop-blur-sm flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-      <span class="text-white font-medium border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors cursor-pointer">
-        <a 
-         href={`/projects_page?id=${projectID}&title=${title}`} 
-        >
-          Ver más información
-        </a>
-      </span>
+        <a class="text-white font-medium border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors cursor-pointer" href={`/projects_page?id=${project.projectName}`} data-astro-reload> Ver más información </a>
     </div>
   </div>
 
   <div class="bg-(--color-secondary) text-white px-4 py-4 grow">
     <h1 class="text-xl font-semibold">
-      {title}
+      {project.projectName}
     </h1>
     <h2 class="text-blue-500 py-1 font-medium text-sm">
-      {technology}
+      {project.technologiesUsed[0]}
     </h2>
-    <p class="text-start text-sm wrap-break-word line-clamp-3">
-      {description}
+    <p class="text-start text wrap-break-word line-clamp-7">
+      {project.projectLittleDescription}
     </p>
   </div>
 </div>
