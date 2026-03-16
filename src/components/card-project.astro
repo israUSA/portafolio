@@ -21,12 +21,12 @@ const projectID = project.projectName.toLowerCase().replace(/\s+/g, '-');
     <Image
       src={(project.screenshots?.[0] ?? "") as any} 
       alt={`Imagen proyecto ${project.projectName}`}
-      transition:name={`hero-${projectID}`} 
+      transition:name={`hero-${project.projectName}`} 
       class="h-80 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
     />
 
     <div class="absolute inset-0 bg-black/40 backdrop-blur-sm flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-        <a class="text-white font-medium border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors cursor-pointer" href={`/projects_page?id=${project.projectName}`} data-astro-reload> Ver más información </a>
+        <a class="text-white font-medium border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors cursor-pointer" href={`/projects_page/${project.projectName}`}> Ver más información </a>
     </div>
   </div>
 

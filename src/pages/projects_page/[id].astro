@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from '../../components/header.astro';
+
+import { Image } from "astro:assets";
+import { PROJECTS_DATA } from "../../data/projects";
+
+export async function getStaticPaths() {
+  return PROJECTS_DATA.map((project) => ({
+    params: {id: project.projectName}, props: {project}
+  } )
+)
+}
+
+const {project} = Astro.props;
+
+---
+
+<Layout>
+  <Header/>
+   <main transition:animate="slide" class="flex flex-col md:flex-row min-h-screen bg-gray-50 p-10">
+    <a href="/" class="text-blue-500 hover:underline">← Volver</a>
+
+    <div class="max-w-4xl mx-auto mt-10 text-center">
+       <Image 
+        src={(project?.screenshots![0] ?? "") as any} 
+        alt={`Imagen proyecto ${project.projectName}`}
+        transition:name={`hero-${project.projectName}`} 
+        class="h-120 md:h-180 w-auto "
+      /> 
+      <h1 class="text-4xl font-bold mt-8">{project.projectName}</h1>
+    </div>
+  </main>
+</Layout>
