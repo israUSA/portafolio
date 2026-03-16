@@ -4,12 +4,10 @@ export interface NavItem{
 }
 
 export enum ProjectsNames{
-  Servientrega = "Servientrega Courier",
+  Servientrega = "Servientrega Mensajero",
   Teojama = "Conductor Teojama",
   Promarisco = "Promarisco"
 }
-
-
 
 export interface ProjectInformation{
   bgColor: String;
@@ -20,6 +18,8 @@ export interface ProjectInformation{
   keyFeatures: KeyFeatures[]
   technologiesUsed: String[];
   screenshots?: ImageMetadata[];
+  playStoreUrl?: String,
+  appStoreUrl?: String
 }
 export interface KeyFeatures{
   title: String;

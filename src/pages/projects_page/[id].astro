@@ -1,34 +1,77 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Header from '../../components/header.astro';
+import Header from "../../components/header.astro";
 
 import { Image } from "astro:assets";
 import { PROJECTS_DATA } from "../../data/projects";
 
 export async function getStaticPaths() {
   return PROJECTS_DATA.map((project) => ({
-    params: {id: project.projectName}, props: {project}
-  } )
-)
+    params: { id: project.projectName },
+    props: { project },
+  }));
 }
 
-const {project} = Astro.props;
-
+const { project } = Astro.props;
 ---
 
 <Layout>
-  <Header/>
-   <main transition:animate="slide" class="flex flex-col md:flex-row min-h-screen bg-gray-50 p-10">
-    <a href="/" class="text-blue-500 hover:underline">← Volver</a>
+  <Header />
+  <main
+    transition:animate="slide"
+    class="flex flex-col min-h-screen bg-gray-50 p-10"
+  >
+    <div class="flex flex-col">
+      <a href="/" class="text-blue-500 hover:underline">← Volver</a>
+      <div class="pt-4">
+        {
+          project.appStoreUrl != null && project.playStoreUrl != null && (
+            <div class="flex gap-2 items-center bg-amber-200 px-3 py-1 rounded-full w-fit">
+              <div class="rounded-full bg-amber-500 h-2 w-2 inline-block" />
+              <span class="text-sm font-medium">Android & iOS</span>
+            </div>
+          )
+        }
 
-    <div class="max-w-4xl mx-auto mt-10 text-center">
-       <Image 
-        src={(project?.screenshots![0] ?? "") as any} 
-        alt={`Imagen proyecto ${project.projectName}`}
-        transition:name={`hero-${project.projectName}`} 
-        class="h-120 md:h-180 w-auto "
-      /> 
-      <h1 class="text-4xl font-bold mt-8">{project.projectName}</h1>
+        {
+          project.playStoreUrl != null && project.appStoreUrl == null && (
+            <div class="flex gap-2 items-center bg-amber-200 px-3 py-1 rounded-full w-fit">
+              <div class="rounded-full bg-amber-500 h-2 w-2 inline-block" />
+              <span class="text-sm font-medium">Android</span>
+            </div>
+          )
+        }
+        {
+          project.appStoreUrl != null && project.playStoreUrl == null && (
+            <div class="flex gap-2 items-center bg-amber-200 px-3 py-1 rounded-full w-fit">
+              <div class="rounded-full bg-amber-500 h-2 w-2 inline-block" />
+              <span class="text-sm font-medium">iOS</span>
+            </div>
+          )
+        }
+      </div>
+
+      <h1 class="text-2xl font-bold mt-4">{project.projectName}</h1>
+      <h2 class="text-base mt-2">{project.projectSubtitle}</h2>
+    </div>
+    <div class="flex flex-col md:flex-row justify-start md:justify-between pt-5 mx-12 md:pt-10"
+    >
+      <div
+        class="flex-1 flex flex-col items-center text-center w-full max-w-6xl mx-auto mt-4 md:mt-0"
+      >
+        <Image
+          src={(project?.screenshots![0] ?? "") as any}
+          alt={`Imagen proyecto ${project.projectName}`}
+          transition:name={`hero-${project.projectName}`}
+          class="h-120 w-auto"
+        />
+      </div>
+      <div>
+        
+
+
+        
+      </div>
     </div>
   </main>
 </Layout>
