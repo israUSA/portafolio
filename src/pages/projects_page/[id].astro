@@ -20,7 +20,7 @@ const { project } = Astro.props;
   <Header />
   <main
     transition:animate="slide"
-    class="flex flex-col min-h-screen bg-gray-50 p-10"
+    class="flex flex-col min-h-screen bg-gray-50 p-8 gap-8 md:gap-0"
   >
     <div class="flex flex-col">
       <a href="/" class="text-blue-500 hover:underline">← Volver</a>
@@ -55,20 +55,20 @@ const { project } = Astro.props;
       <h1 class="text-2xl font-bold mt-4">{project.projectName}</h1>
       <h2 class="text-base mt-2">{project.projectSubtitle}</h2>
     </div>
-    <div class="flex flex-col md:flex-row justify-start md:justify-between mr-12 md:pt-10 gap-0 lg:gap-10">
-      <div class="flex flex-col md:flex-row justify-between items-start mr-12">
+    <div class="flex flex-col md:flex-row justify-start md:justify-between md:pt-10 gap-0 lg:gap-10">
+      <div class="flex flex-col md:flex-row justify-between  md:items-start md:mr-12">
   
         <Image
           src={(project?.screenshots![0] ?? "") as any}
           alt={`Imagen proyecto ${project.projectName}`}
           transition:name={`hero-${project.projectName}`}
-          class="h-140 w-auto object-contain"
+          class="md:h-160 lg:h-180 w-auto object-contain"
         />
       </div>
-      <div class="flex-1 ">
-        <div class="flex flex-col gap-5 bg-(--color-secondary) text-white px-4 py-8 rounded-t-2xl">
+      <div class="flex-1 pt-4 md:pt-0">
+        <div class="flex flex-col gap-5 bg-(--color-secondary) text-white px-2 md:px-4 py-8 rounded-t-2xl">
           <h1 class="text-2xl font-semibold">Descripción</h1>
-          <p class="text-sm md:text-xl font-semibold text-justify">
+          <p class="text-sm md:text-xl sm:leading-2 md:leading-10 font-semibold text-justify">
             {project.projectDescription}
           </p>
         </div>
@@ -76,19 +76,18 @@ const { project } = Astro.props;
           <h1 class="text-2xl font-semibold">Características Clave </h1>
           
         </div>
-        <div class="flex flex-col gap-5 bg-(--color-primary) px-4 py-8 rounded-b-2xl">
-          <h1 class="text-2xl font-semibold">Tecnologías Usadas </h1>
+        <div class="flex flex-col md:gap-5 bg-(--color-primary) px-2 md:px-4 py-8 rounded-b-2xl">
+          <h1 class="text-2xl font-semibold overflow-x-auto pb-2">Tecnologías Usadas </h1>
           <div class="flex flex-row">
             {
               project.technologiesUsed.map((technologies) => (
-                <div class="text-white bg-(--color-secondary) p-3 mx-2 rounded-3xl w-fit">
+                <div class="text-white bg-(--color-secondary) p-2 md:p-3 mx-0.5 md:mx-2 rounded-3xl w-fit whitespace-nowrap">
                   {technologies}
                 </div>
               ))
             }
           </div>
-
-          
+     
         </div>
       </div>
     </div>
