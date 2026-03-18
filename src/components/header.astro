@@ -2,10 +2,10 @@
 import type { NavItem } from "../types/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Inicio", url: "#start" },
-  { title: "Skills", url: "#skills" },
-  { title: "Proyectos", url: "#projects" },
-  { title: "Contacto", url: "#contact" },
+  { title: "Inicio", url: "/#start" },
+  { title: "Skills", url: "/#skills" },
+  { title: "Proyectos", url: "/#projects" },
+  { title: "Contacto", url: "/#contact" },
 ];
 ---
 
@@ -145,7 +145,6 @@ const navItems: Array<NavItem> = [
   // Ejecutar al cargar
   setupMenu();
 
-  // Si usas ViewTransitions de Astro, añade esto:
   document.addEventListener('astro:after-swap', setupMenu);
 
 </script>

@@ -45,7 +45,10 @@ export const PROJECTS_DATA: ProjectInformation[] = [
     projectDescription: "",
     projectSubtitle: "",
     projectLittleDescription: "Promarisco es una solución de seguridad integral. Digitaliza el control de accesos, la verificación física, custodias y agendamiento de visitas, garantizando una vigilancia operativa eficiente y un entorno seguro.",
-    keyFeatures: [],
+    keyFeatures: [
+      {title: 'Scanner de código QR', description: '', icon: 'fa-solid fa-barcode'},
+      
+    ],
     technologiesUsed: ['Flutter'],
     screenshots: [promariscoImage]
   }
