@@ -17,7 +17,7 @@ export const PROJECTS_DATA: ProjectInformation[] = [
       {title: 'Background', description: 'Motor del modo offline, verifica conexión a internet sincronizando las guías gestionadas y guardando guías nuevas asignadas', icon: 'fa-solid fa-forward-fast'},
       {title: 'Scanner de código de barras', description: 'Búsqueda de guías y consulta de tracking por medio de código de barras', icon: 'fa-solid fa-barcode'},
       {title: 'Generación de rutas', description: 'Generación de ruta (óptima o personalizada) de entrega de las guías', icon: 'fa-solid fa-route'},
-      {title: 'Multigestion de ordenes', description: 'Gestiona multiples guías al mismo tiempo', icon: 'fa-brands fa-buffer'},
+      {title: 'Multigestion de guías', description: 'Gestiona multiples guías al mismo tiempo', icon: 'fa-brands fa-buffer'},
       {title: 'Organización por carpetas', description: 'Organización de guías en carpetas personalizadas según ruta, zona o flujo de trabajo', icon: 'fa-brands fa-buffer'},
     ],
     technologiesUsed: ['Flutter', 'Firebase', 'Firebase Crashlytics'],
