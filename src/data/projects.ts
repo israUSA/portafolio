@@ -3,6 +3,10 @@ import { ProjectsNames } from "../types/types";
 
 import servientregaImage from "../assets/screenshots/servientrega-project.png";
 import teojamaImage from "../assets/screenshots/teojama-project.png";
+import teojamaImage2 from "../assets/screenshots/teojama-project-2.png";
+import teojamaImage3 from "../assets/screenshots/teojama-project-3.png";
+import teojamaImage4 from "../assets/screenshots/teojama-project-4.png";
+import teojamaImage5 from "../assets/screenshots/teojama-project-5.png";
 import promariscoImage from "../assets/screenshots/promarisco-project.png";
 
 export const PROJECTS_DATA: ProjectInformation[] = [
@@ -37,7 +41,7 @@ export const PROJECTS_DATA: ProjectInformation[] = [
     technologiesUsed: ['Flutter', 'Firebase', 'Firebase Messaging', 'Google Sign-in'],
     playStoreUrl: '',
     appStoreUrl:'',
-    screenshots: [teojamaImage]
+    screenshots: [teojamaImage, teojamaImage2, teojamaImage3, teojamaImage4, teojamaImage5]
   },
   {
     bgColor: "bg-red-100",

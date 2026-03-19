@@ -20,7 +20,7 @@ const { project } = Astro.props;
   <Header />
   <main
     transition:animate="slide"
-    class="flex flex-col min-h-screen bg-gray-50 p-8 gap-8 md:gap-0"
+    class="flex flex-col min-h-screen bg-gray-50 px-8 gap-8 md:gap-0"
   >
     <div class="flex flex-col">
       <a href="/" class="text-blue-500 hover:underline">← Volver</a>
@@ -54,19 +54,19 @@ const { project } = Astro.props;
 
       <h1 class="text-2xl font-bold mt-4">{project.projectName}</h1>
     </div>
-    <div class="flex flex-col md:flex-row justify-start md:justify-between md:pt-10 gap-0 lg:gap-10">
+    <div class="flex flex-col md:flex-row justify-start md:justify-between md:pt-5 gap-0 lg:gap-10">
       <div class="flex flex-col md:flex-row justify-between  md:items-center md:mr-12">
         <Image
           src={(project?.screenshots![0] ?? "") as any}
           alt={`Imagen proyecto ${project.projectName}`}
           transition:name={`hero-${project.projectName}`}
-          class="md:h-160 lg:h-180 w-auto object-contain"
+          class="md:h-150 lg:h-160 w-auto object-contain"
         />
       </div>
       <div class="flex-1 pt-4 md:pt-0">
         <div class="flex flex-col gap-5 bg-(--color-secondary) text-white px-2 md:px-4 py-8 rounded-t-2xl">
           <h1 class="text-xl font-semibold">Descripción</h1>
-          <p class="text-sm md:text-lg sm:leading-2 md:leading-10 font-semibold text-justify">
+          <p class="text-sm md:text-md sm:leading-2 md:leading-7 font-semibold text-justify">
             {project.projectDescription}
           </p>
         </div>
@@ -95,7 +95,7 @@ const { project } = Astro.props;
           
         </div>
         
-        <div class="flex flex-col md:gap-5 bg-(--color-primary) px-2 md:px-4 py-8 rounded-b-2xl">
+        <div class="flex flex-col md:gap-5 bg-(--color-primary) px-2 md:px-4 py-8 mb-20 rounded-b-2xl">
           <h1 class="text-2xl font-semibold overflow-x-auto pb-2 text-white">Tecnologías Usadas </h1>
             <div class="flex flex-row flex-wrap gap-2 ">
             {
@@ -109,6 +109,74 @@ const { project } = Astro.props;
         </div>
       </div>
     </div>
+    <div>
+
+      {
+  project.screenshots!.length > 1 && (
+    <div class="mb-20">
+      <h1 class="text-2xl font-bold mb-6">App Screenshots</h1>
+      
+      <div class="relative group max-w-full">
+        <div 
+          id="carousel-container"
+          class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4"
+        >
+          {
+            project.screenshots!.map((img, index) => (
+              <div class="flex-none snap-start min-w-full md:min-w-[calc(5px)]">
+                <Image
+                  src={img} 
+                  alt={`Imagen ${index}`} 
+                  class="w-full h-auto object-contain rounded-xl shadow-md bg-gray-100"
+                />
+              </div>
+            ))
+          }
+        </div>
+
+        <button 
+          id="prev"
+          class="absolute -left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <button 
+          id="next"
+          class="absolute -right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  )
+}
+
+
+
+    </div>
   </main>
   <Footer/>
 </Layout>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<script>
+  const container = document.getElementById('carousel-container');
+  const next = document.getElementById('next');
+  const prev = document.getElementById('prev');
+
+  if (container && next && prev) {
+    next.onclick = () => {
+      container.scrollLeft += container.clientWidth / 2;
+    };
+
+    prev.onclick = () => {
+      container.scrollLeft -= container.clientWidth / 2;
+    };
+  }
+</script>
+
