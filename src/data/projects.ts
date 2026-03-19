@@ -10,7 +10,6 @@ export const PROJECTS_DATA: ProjectInformation[] = [
     bgColor: "bg-green-100",
     projectName: ProjectsNames.Servientrega,
     projectDescription: "Diseñado para el ritmo real del mensajero. Servientrega te ofrece una experiencia fluida donde la inteligencia de rutas guía tu camino. Ya sea desde los lugares mas reconditos y sin señal de internet, nunca te detienes: gestiona cada paquete en modo offline con la confianza de que tu trabajo se sincronizará solo. Convierte tu logística en una operación ágil, ordenada y sin interrupciones.",
-    projectSubtitle: "Plataforma de gestión para couriers logística para la gestión de guías en Servientrega.",
     projectLittleDescription: "Servientrega permite al mensajero controlar su ruta con total libertad. Organiza entregas y recolecciones, reordena prioridades al instante y registra cada paquete entregado, haciendo el trabajo diario mucho más ágil, ordenado y eficiente.",
     keyFeatures: [
       {title: 'Modo Offline', description: 'Guarda en el dispositivo todo lo necesario para que el operador gestione sus guías sin necesidad de conexión a internet', icon: 'fa-solid fa-cloud-arrow-down'},
@@ -28,11 +27,12 @@ export const PROJECTS_DATA: ProjectInformation[] = [
   {
     bgColor: "bg-indigo-100",
     projectName: ProjectsNames.Teojama,
-    projectDescription: "",
-    projectSubtitle: "",
+    projectDescription: "Diseñada para recompensar la excelencia en el camino, Conductor Teojama transforma el mantenimiento preventivo en una experiencia de beneficios exclusivos. No es solo una herramienta de registro, es un ecosistema de fidelización donde cada visita al taller fortalece la vida útil de tu camión y acumula valor real. Desde el escaneo ágil de servicios hasta la emoción de canjear premios logrados con esfuerzo, la app garantiza que el conductor sea el protagonista. Convierte cada mantenimiento en una oportunidad de crecimiento, asegurando un rendimiento técnico impecable y una ruta siempre premiada.",
     projectLittleDescription: "Conductor Teojama es una app de fidelización que premia el mantenimiento preventivo. Los conductores acumulan puntos por cada servicio mecánico realizado, permitiéndoles canjear beneficios exclusivos y asegurar el estado técnico de sus camiones.",
     keyFeatures: [
-      {title: 'Notificaciones', description: '', icon: ''},
+      {title: 'Reclamo de premios', description: 'Juego interactivo donde se selecciona y se reclama los premios alcanzados', icon: 'fa-solid fa-award'},
+      {title: 'Scanner de código QR', description: 'Escaneo de código QR para reclamo de premios y finalización de mantenimientos vehiculares', icon: 'fa-solid fa-barcode'},
+      {title: 'Notificaciones', description: 'Notificaciones personalizadas y segmendatas con fines informativos y de preferencias segun los usuarios', icon: 'fa-solid fa-bell'},
     ],
     technologiesUsed: ['Flutter', 'Firebase', 'Firebase Messaging', 'Google Sign-in'],
     playStoreUrl: '',
@@ -42,12 +42,10 @@ export const PROJECTS_DATA: ProjectInformation[] = [
   {
     bgColor: "bg-red-100",
     projectName: ProjectsNames.Promarisco,
-    projectDescription: "",
-    projectSubtitle: "",
+    projectDescription: "Solución integral de seguridad operativa que digitaliza el control de accesos, agendamientos y reporte de incidencias. Diseñada para garantizar la trazabilidad de custodias y una respuesta ágil ante novedades, optimizando la vigilancia física en un entorno logístico de alta exigencia.",
     projectLittleDescription: "Promarisco es una solución de seguridad integral. Digitaliza el control de accesos, la verificación física, custodias y agendamiento de visitas, garantizando una vigilancia operativa eficiente y un entorno seguro.",
     keyFeatures: [
-      {title: 'Scanner de código QR', description: '', icon: 'fa-solid fa-barcode'},
-      
+      {title: 'Scanner de código QR', description: 'Escaneo para confirmar entradas de visitas, logistica, etc', icon: 'fa-solid fa-barcode'},
     ],
     technologiesUsed: ['Flutter'],
     screenshots: [promariscoImage]

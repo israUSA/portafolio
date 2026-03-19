@@ -12,7 +12,6 @@ export enum ProjectsNames{
 export interface ProjectInformation{
   bgColor: String;
   projectName: ProjectsNames;
-  projectSubtitle: String;
   projectLittleDescription: String;
   projectDescription: String;
   keyFeatures: KeyFeatures[]
