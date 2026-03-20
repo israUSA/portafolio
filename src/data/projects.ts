@@ -2,6 +2,8 @@ import type { ProjectInformation } from "../types/types";
 import { ProjectsNames } from "../types/types";
 
 import servientregaImage from "../assets/screenshots/servientrega-project.png";
+import servientregaImage2 from "../assets/screenshots/servientrega-project-2.png";
+import servientregaImage3 from "../assets/screenshots/servientrega-project-3.png";
 import teojamaImage from "../assets/screenshots/teojama-project.png";
 import teojamaImage2 from "../assets/screenshots/teojama-project-2.png";
 import teojamaImage3 from "../assets/screenshots/teojama-project-3.png";
@@ -26,7 +28,7 @@ export const PROJECTS_DATA: ProjectInformation[] = [
     technologiesUsed: ['Flutter', 'Firebase', 'Firebase Crashlytics'],
     playStoreUrl: '',
     appStoreUrl:'',
-    screenshots: [servientregaImage] 
+    screenshots: [servientregaImage, servientregaImage2, servientregaImage3] 
   },
   {
     bgColor: "bg-indigo-100",
